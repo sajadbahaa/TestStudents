@@ -184,3 +184,4 @@ D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\ne
 D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\DTLayer.pdb
 D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\Dtos.pdb
 D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\RepLayer.pdb
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\AutoMapper.dll
