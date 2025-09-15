@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BsLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93d9be582e9e32316a2cedc7b180477a8b4686e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d28564c46f95b15027026bcd087193a8cc884de")]
 [assembly: System.Reflection.AssemblyProductAttribute("BsLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BsLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
