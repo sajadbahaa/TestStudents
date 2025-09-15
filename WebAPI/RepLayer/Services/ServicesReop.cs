@@ -1,0 +1,19 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RepLayer.Services
+{
+    static  public  class ServicesReop
+    {
+        static public IServiceCollection AddRepoServices(this IServiceCollection services) 
+        {
+            services.AddScoped<ItemRepo>();
+            services.AddScoped<SpecilizeRepo>();
+            return services;
+        }
+    }
+}
