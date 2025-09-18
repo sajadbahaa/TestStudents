@@ -57,5 +57,10 @@ namespace RepLayer
             return await _context.specilzeations.AsNoTracking().ToListAsync();
         }
 
+        public async Task<bool>IsExist(string name)
+        {
+            return await _context.specilzeations.AnyAsync(x => x.specilizeName.Equals(name));
+        }
+
     }
 }

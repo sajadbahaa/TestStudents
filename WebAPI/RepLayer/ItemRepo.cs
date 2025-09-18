@@ -16,6 +16,8 @@ namespace RepLayer
         {
             _context = context;
         }
+
+        // Repo resoponsiable for Add CRUD Only.
         public async Task<bool> AddAsync(List< Items> entity)
         {
             try
@@ -29,7 +31,7 @@ namespace RepLayer
                 return false;
             }
         }
-        public async Task<short> AddAsync(Items entity)
+                public async Task<short> AddAsync(Items entity)
         {
             try
             {
@@ -62,13 +64,18 @@ namespace RepLayer
                        .ExecuteDeleteAsync();
             return res != 0;
         }
-        public async Task<Items?> FindAsync(short id)
+        public async Task<Items?> FindItemDetialsAsync(short id)
         {
-            return await _context.items.AsNoTracking().FirstOrDefaultAsync(x => x.itemID == id);
+            return await _context.items.AsNoTracking().Include(x=>x.specilize).FirstOrDefaultAsync(x => x.itemID == id);
         }
         public async Task<List<Items>?> GetAllAsync()
         {
-            return await _context.items.AsNoTracking().ToListAsync();
+            return await _context.items.AsNoTracking().Include(x => x.specilize).ToListAsync();
+        }
+        public async Task<bool> IsExistItemName(List<Items> list)
+        {
+            var names = list.Select(y => y.itemName).ToList(); // قائمة أسماء العناصر
+            return await _context.items.AnyAsync(x => names.Contains(x.itemName));
         }
 
     }
