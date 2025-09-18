@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dtos", "Dtos\Dtos.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepLayer", "RepLayer\RepLayer.csproj", "{1465FE34-EB1E-4DC0-B357-3B5A56740C61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaildationLayer", "VaildationLayer\VaildationLayer.csproj", "{939F61E8-4CA6-41F9-8D01-2FABC91C7656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1465FE34-EB1E-4DC0-B357-3B5A56740C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1465FE34-EB1E-4DC0-B357-3B5A56740C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1465FE34-EB1E-4DC0-B357-3B5A56740C61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939F61E8-4CA6-41F9-8D01-2FABC91C7656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939F61E8-4CA6-41F9-8D01-2FABC91C7656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939F61E8-4CA6-41F9-8D01-2FABC91C7656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939F61E8-4CA6-41F9-8D01-2FABC91C7656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
