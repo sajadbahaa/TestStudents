@@ -20,5 +20,11 @@ namespace DTLayer.Entities
             specilizeID = 0;
             specilize = new Specilzeations();
         }
+        public Items(string itemName, short specilizeID)
+        {
+           
+            this.itemName = itemName;
+            this.specilizeID = specilizeID;
+        }
     }
 }
