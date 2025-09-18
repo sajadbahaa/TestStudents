@@ -185,3 +185,9 @@ D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\ne
 D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\Dtos.pdb
 D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\RepLayer.pdb
 D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\AutoMapper.dll
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\FluentValidation.dll
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\VaildationLayer.dll
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\VaildationLayer.pdb
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\WebAPI\bin\Debug\net8.0\FluentValidation.AspNetCore.dll

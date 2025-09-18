@@ -1,5 +1,14 @@
+using BsLayer.maaper;
+using BsLayer.Services;
 using DTLayer.Services;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+
+
+//using FluentValidation.AspNetCore;
+using Microsoft.Extensions.DependencyInjection;
 using RepLayer.Services;
+using VaildationLayer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +19,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureDatabase(builder.Configuration);
+builder.Services.AddFluentValidationAutoValidation();
+//builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<AddUpdateFindSpecilizesDtoValidator>();
+builder.Services.AddAutoMapper(typeof(AppMappingProfile).Assembly);
+builder.Services.addBussinesServices();
 builder.Services.AddRepoServices();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
