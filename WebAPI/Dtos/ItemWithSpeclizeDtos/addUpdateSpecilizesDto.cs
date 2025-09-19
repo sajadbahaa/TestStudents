@@ -1,4 +1,4 @@
-﻿namespace Dtos
+﻿namespace Dtos.ItemWithSpeclizeDtos
 {
     public class addUpdateSpecilizesDto
     {
