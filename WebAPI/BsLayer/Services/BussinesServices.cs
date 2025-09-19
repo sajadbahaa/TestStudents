@@ -17,6 +17,7 @@ namespace BsLayer.Services
             services.AddScoped<AppMappingProfile>();
             services.AddScoped<SpecilizationsService>();
             services.AddScoped<ItemsService>();
+            services.AddScoped<CourseService>();
             return services;
         }
     }

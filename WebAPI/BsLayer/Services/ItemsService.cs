@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DTLayer.Entities;
-using Dtos;
+using Dtos.ItemWithSpeclizeDtos;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using RepLayer;
 using System;

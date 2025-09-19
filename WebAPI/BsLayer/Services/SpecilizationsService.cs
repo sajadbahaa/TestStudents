@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using DTLayer.Entities;
-using Dtos;
+using Dtos.ItemWithSpeclizeDtos;
 using RepLayer;
-namespace BsLayer
+namespace BsLayer.Services
 {
     public class SpecilizationsService
     {
