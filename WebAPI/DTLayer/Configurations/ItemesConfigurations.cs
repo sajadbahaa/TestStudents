@@ -1,10 +1,11 @@
 ﻿using DTLayer.Entities;
+using DTLayer.Entities.EntityEnums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DTLayer.Configurations
 {
-    public class ItemesConfigurations:IEntityTypeConfiguration<Items>
+    public class ItemesConfigurations: IEntityTypeConfiguration<Items>
     {
         public void Configure(EntityTypeBuilder<Items> builder)
         {

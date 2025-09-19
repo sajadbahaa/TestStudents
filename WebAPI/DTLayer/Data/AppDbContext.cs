@@ -12,21 +12,19 @@ namespace DTLayer.Data
         {
          
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(
-                    "Server=.;Database=SchoolDB;User ID=sa;Password=sa123456;TrustServerCertificate=True"
-                );
-            }
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer(
+        //            "Server=.;Database=SchoolDB;User ID=sa;Password=sa123456;TrustServerCertificate=True"
+        //        );
+        //    }
+        //}
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
@@ -34,6 +32,6 @@ namespace DTLayer.Data
 
         public DbSet<Items> items { get; set; }
         public DbSet<Specilzeations> specilzeations { get; set; }
-
+        public DbSet<Courses> courses { get; set; }
     }
 }

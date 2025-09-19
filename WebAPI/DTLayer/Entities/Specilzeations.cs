@@ -9,14 +9,9 @@ namespace DTLayer.Entities
     public  class Specilzeations
     {
         public  short specilizeId {  get; set; }
-        public string specilizeName { get; set; }
+        public string specilizeName { get; set; } = string.Empty;
 
         public ICollection<Items>Items { get; set; }
-        public Specilzeations()
-        {
-            specilizeId = 0;
-            specilizeName = string.Empty;
-            Items = new List<Items>();
-        }
+       
     }
 }
