@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RepLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+059cf3c4cb7b7d184d629adf542b2ac3278aa774")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5bd5d084afdea462cbd4a75376f99642ccb79acb")]
 [assembly: System.Reflection.AssemblyProductAttribute("RepLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RepLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

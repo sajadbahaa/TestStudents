@@ -13,6 +13,7 @@ namespace RepLayer.Services
         {
             services.AddScoped<ItemRepo>();
             services.AddScoped<SpecilizeRepo>();
+            services.AddScoped<CourseRepo>();
             return services;
         }
     }
