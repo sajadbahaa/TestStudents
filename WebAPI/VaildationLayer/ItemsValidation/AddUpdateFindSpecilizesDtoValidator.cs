@@ -1,7 +1,7 @@
-﻿using Dtos;
+﻿using Dtos.ItemWithSpeclizeDtos;
 using FluentValidation;
 
-namespace VaildationLayer
+namespace VaildationLayer.ItemsValidation
 {
     public class AddUpdateFindSpecilizesDtoValidator: AbstractValidator<addUpdateSpecilizesDto>
     {
