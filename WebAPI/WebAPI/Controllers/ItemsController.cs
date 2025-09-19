@@ -1,6 +1,6 @@
 ﻿using BsLayer;
 using BsLayer.Services;
-using Dtos;
+using Dtos.ItemWithSpeclizeDtos;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

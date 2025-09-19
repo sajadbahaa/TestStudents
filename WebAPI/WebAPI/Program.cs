@@ -8,7 +8,7 @@ using FluentValidation.AspNetCore;
 //using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 using RepLayer.Services;
-using VaildationLayer;
+using VaildationLayer.ItemsValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
