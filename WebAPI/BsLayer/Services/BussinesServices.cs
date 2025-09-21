@@ -18,6 +18,7 @@ namespace BsLayer.Services
             services.AddScoped<SpecilizationsService>();
             services.AddScoped<ItemsService>();
             services.AddScoped<CourseService>();
+            services.AddScoped<PeopleService>();
             return services;
         }
     }

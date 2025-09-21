@@ -3,6 +3,7 @@ using DTLayer.Entities;
 using DTLayer.Entities.EntityEnums;
 using Dtos.CoursesDtos;
 using Dtos.ItemWithSpeclizeDtos;
+using Dtos.PeopleDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -95,6 +96,50 @@ namespace BsLayer.maaper
             ;
 
 
+
+///
+// People Mapper.
+///
+
+
+            CreateMap<People, findPeopleDtos>()
+                .ForMember(x => x.PersonID, opt => opt.MapFrom(x=>x.PersonID))
+                .ForMember(x => x.email, opt => opt.MapFrom(x => x.email))
+                .ForMember(x => x.phone, opt => opt.MapFrom(x => x.phone))
+
+.ForMember(x => x.birth, opt => opt.MapFrom(x => x.birth))
+   //.ForMember(x => x.fullName, opt => opt.MapFrom(x => new StringBuilder(x.firstName+' '+x.secondName+' '+x.lastName)))
+   .ForMember(x => x.fullName, opt => opt.MapFrom(x => $"{x.firstName} {x.secondName} {x.lastName}"))
+
+.ForMember(x => x.gendor, opt => opt.MapFrom(x => x.gendor.ToString()));
+
+
+
+            CreateMap<addPeopleDtos, People>()
+                .ForMember(x => x.PersonID, opt => opt.Ignore())
+                .ForMember(x => x.email, opt => opt.MapFrom(x => x.email))
+                .ForMember(x => x.phone, opt => opt.MapFrom(x => x.phone))
+
+.ForMember(x => x.birth, opt => opt.MapFrom(x => x.birth))
+                .ForMember(x => x.firstName, opt => opt.MapFrom(x => x.firstName))
+                .ForMember(x => x.secondName, opt => opt.MapFrom(x => x.secondName))
+.ForMember(x => x.lastName, opt => opt.MapFrom(x => x.lastName))
+
+                .ForMember(x => x.gendor, opt => opt.MapFrom(x => (PeopleEnum)x.gendor));
+
+
+
+            CreateMap<updatePeopleDtos, People>()
+                .ForMember(x => x.PersonID, opt => opt.MapFrom(x=>x.PersonID))
+                .ForMember(x => x.email, opt => opt.MapFrom(x => x.email))
+                .ForMember(x => x.phone, opt => opt.MapFrom(x => x.phone))
+
+.ForMember(x => x.birth, opt => opt.MapFrom(x => x.birth))
+                .ForMember(x => x.firstName, opt => opt.MapFrom(x => x.firstName))
+                .ForMember(x => x.secondName, opt => opt.MapFrom(x => x.secondName))
+.ForMember(x => x.lastName, opt => opt.MapFrom(x => x.lastName))
+
+                .ForMember(x => x.gendor, opt => opt.MapFrom(x => (PeopleEnum)x.gendor));
 
             //CreateMap<>
 
