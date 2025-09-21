@@ -33,5 +33,6 @@ namespace DTLayer.Data
         public DbSet<Items> items { get; set; }
         public DbSet<Specilzeations> specilzeations { get; set; }
         public DbSet<Courses> courses { get; set; }
+       public DbSet<People> people { get; set; }
     }
 }
