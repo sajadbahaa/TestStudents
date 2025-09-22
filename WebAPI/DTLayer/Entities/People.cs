@@ -18,6 +18,7 @@ namespace DTLayer.Entities
         public DateOnly birth { get; set; }
         public  PeopleEnum gendor { get; set; }
 
+        public Teachers ? teacher { get; set; }
         public People()
         {
  PersonID = 0;
