@@ -1,0 +1,15 @@
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\bin\Debug\net8.0\DTLayer.deps.json
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\bin\Debug\net8.0\DTLayer.runtimeconfig.json
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\bin\Debug\net8.0\DTLayer.dll
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\bin\Debug\net8.0\DTLayer.pdb
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.csproj.AssemblyReference.cache
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.AssemblyInfoInputs.cache
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.AssemblyInfo.cs
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.csproj.CoreCompileInputs.cache
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.sourcelink.json
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.dll
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\refint\DTLayer.dll
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.pdb
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\DTLayer.genruntimeconfig.cache
+D:\VisualStudio-Projects\Projects\ts-api\TestStudents\WebAPI\DTLayer\obj\Debug\net8.0\ref\DTLayer.dll
