@@ -4,6 +4,7 @@ using DTLayer.Entities.EntityEnums;
 using Dtos.CoursesDtos;
 using Dtos.ItemWithSpeclizeDtos;
 using Dtos.PeopleDtos;
+using Dtos.Teachers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -142,6 +143,36 @@ namespace BsLayer.maaper
                 .ForMember(x => x.gendor, opt => opt.MapFrom(x => (PeopleEnum)x.gendor));
 
             //CreateMap<>
+
+            /// Create Teacher Mapper.
+            CreateMap<Teachers, findTeacherDtos>()
+                    .ForMember(x => x.teacherID, opt => opt.MapFrom(x => x.TeacherID))
+                    .ForMember(x => x.hireDate, opt => opt.MapFrom(x => x.hireDate))
+                    .ForMember(x => x.specilzeString, opt => opt.MapFrom(x => x.specilze.specilizeName))
+                    .ForMember(x => x.findPeople, opt => opt.MapFrom(x => x.person));
+
+            // repeate. CreateMap<addTeacherDtos,Teachers>()
+            //        .ForMember(x => x.hireDate, opt => opt.MapFrom(x => x.hireDate))
+            //        .ForMember(x => x.person, opt => opt.MapFrom(x => x.person))
+            //        .ForMember(x => x.specilizeId, opt => opt.MapFrom(x => x.specilizeId))
+            //        .ForMember(x => x.specilze, opt => opt.Ignore());
+
+
+
+            CreateMap<addTeacherDtos, Teachers>()
+                 .ForMember(x => x.specilze, opt => opt.Ignore());
+
+
+            CreateMap<updateTeacherDtos, Teachers>()
+                .ForMember(x=>x.TeacherID,opt=>opt.MapFrom(x=>x.teacherID))
+                 .ForMember(x => x.specilze, opt => opt.Ignore())
+                 .ForMember(x=>x.person, opt => opt.Ignore());
+
+            CreateMap<updateTeacherWithPersonDtos, Teachers>()
+                .ForMember(x => x.TeacherID, opt => opt.MapFrom(x => x.teacherID))
+                .ForMember(x => x.specilze, opt => opt.Ignore())
+                 .ForMember(x => x.person, opt => opt.MapFrom(x=>x.person));
+
 
 
         }
