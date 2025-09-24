@@ -50,7 +50,7 @@ namespace VaildationLayer.PeopleValidation
         if (birth > today.AddYears(-age)) age--;
 
         // العمر بين 6 و22
-        return age >= 6 && age <= 22;
+        return age >= 6 && age <= 80;
     })
     .WithMessage("تاريخ الميلاد غير صالح، يجب أن يكون العمر بين 6 و22 سنة ولا يكون اليوم أو المستقبل.");
 
