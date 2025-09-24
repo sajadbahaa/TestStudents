@@ -1,6 +1,7 @@
 ﻿using BsLayer.maaper;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.DependencyInjection;
+using RepLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace BsLayer.Services
             services.AddScoped<CourseService>();
             services.AddScoped<PeopleService>();
             services.AddScoped<TeacherService>();
+            services.AddScoped<TeacherCoursesService>();
+
             return services;
         }
     }

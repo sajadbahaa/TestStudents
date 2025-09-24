@@ -4,6 +4,7 @@ using DTLayer.Entities.EntityEnums;
 using Dtos.CoursesDtos;
 using Dtos.ItemWithSpeclizeDtos;
 using Dtos.PeopleDtos;
+using Dtos.TeacherCoursesDtos;
 using Dtos.TeacherDtos;
 using System;
 using System.Collections.Generic;
@@ -174,6 +175,27 @@ namespace BsLayer.maaper
                  .ForMember(x => x.person, opt => opt.MapFrom(x=>x.person));
 
 
+            CreateMap<TeacherCourses, findTeacherCourseDtos>()
+                .ForMember(x => x.TeacherCourseID, opt => opt.MapFrom(x => x.TeacherCourseID))
+
+                    .ForMember(x => x.courseName, opt => opt.MapFrom(x => x.course.title))
+                    .ForMember(x => x.teacherName, opt => opt.MapFrom(x => x.teacher.person.firstName+' '+ x.teacher.person.lastName))
+                    .ForMember(x => x.startDate, opt => opt.MapFrom(x => x.startDate))
+                    .ForMember(x => x.endDate, opt => opt.MapFrom(x => x.endDate))
+                    .ForMember(x => x.note, opt => opt.MapFrom(x => x.note))
+
+
+                    ;
+
+            CreateMap<updateTeacherCoursrDtos,TeacherCourses>()
+                .ForMember(x => x.TeacherCourseID, opt => opt.MapFrom(x => x.TeacherCourseID))
+
+                    .ForMember(x => x.courseID, opt => opt.MapFrom(x => x.courseID))
+                    .ForMember(x => x.course, opt => opt.Ignore())
+                    .ForMember(x => x.teacher, opt => opt.Ignore());
+
+
+            ;
 
         }
 
