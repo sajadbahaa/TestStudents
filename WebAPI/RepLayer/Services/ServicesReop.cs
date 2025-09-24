@@ -16,6 +16,8 @@ namespace RepLayer.Services
             services.AddScoped<CourseRepo>();
             services.AddScoped<PeopleRepo>();
             services.AddScoped<TeacherRepo>();
+            services.AddScoped<TeacherCourseRepo>();
+
             return services;
         }
     }
