@@ -35,5 +35,6 @@ namespace DTLayer.Data
         public DbSet<Courses> courses { get; set; }
        public DbSet<People> people { get; set; }
         public DbSet<Teachers> Teachers { get; set; }   
+        public DbSet<TeacherCourses> TeacherCourses { get;set; }
     }
 }

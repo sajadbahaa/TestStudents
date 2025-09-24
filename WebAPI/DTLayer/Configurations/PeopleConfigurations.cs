@@ -26,6 +26,7 @@ namespace DTLayer.Configurations
             )
             .HasColumnType("TINYINT");
 
+
         }
     }
 }

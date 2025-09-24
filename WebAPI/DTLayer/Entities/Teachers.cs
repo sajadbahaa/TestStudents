@@ -15,6 +15,7 @@ namespace DTLayer.Entities
         public Specilzeations specilze { get; set; } = null!;
         public People person { get; set; } = null!;
         
+        public ICollection<TeacherCourses> ?teacherCourses { get; set; }
 
 
     }

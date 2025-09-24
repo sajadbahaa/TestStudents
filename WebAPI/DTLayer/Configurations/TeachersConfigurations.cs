@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DTLayer.Configurations
 {
-    public class TeachersConfigurations: IEntityTypeConfiguration<Teachers>
+    public class TeachersConfigurations:  IEntityTypeConfiguration<Teachers>
     {
         public void Configure(EntityTypeBuilder<Teachers> builder)
         {

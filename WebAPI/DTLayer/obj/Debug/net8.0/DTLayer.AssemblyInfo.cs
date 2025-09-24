@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DTLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be161316a21ef6559953a72b5e66adae5dcce13b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f49bb5046db638a1f4d643f15374feb51b9da96")]
 [assembly: System.Reflection.AssemblyProductAttribute("DTLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DTLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

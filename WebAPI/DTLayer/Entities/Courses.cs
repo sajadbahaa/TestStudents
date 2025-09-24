@@ -17,7 +17,8 @@ namespace DTLayer.Entities
         public DateOnly CreateAt { get; set; }
         public bool IsActive {  get; set; }
         public Items Items { get; set; }
-        public CourseEnums level { get; set; } 
+        public CourseEnums level { get; set; }
+        public ICollection<TeacherCourses>? teacherCourses { get; set; }
 
         public Courses() 
         {
