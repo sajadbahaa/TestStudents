@@ -21,5 +21,6 @@ namespace DTLayer.Entities
 
         public Courses course { get; set; }
         public Teachers teacher { get; set; }
+    public ICollection< EnrollmentDetials  > enrollmentDetials { get;  set;} = new HashSet< EnrollmentDetials >();
     }
 }

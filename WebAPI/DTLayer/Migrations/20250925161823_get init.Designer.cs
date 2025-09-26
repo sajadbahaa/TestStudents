@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DTLayer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250922232532_add teacher Courses entity")]
-    partial class addteacherCoursesentity
+    [Migration("20250925161823_get init")]
+    partial class getinit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,6 +60,53 @@ namespace DTLayer.Migrations
                         .IsUnique();
 
                     b.ToTable("courses");
+                });
+
+            modelBuilder.Entity("DTLayer.Entities.EnrollmentDetials", b =>
+                {
+                    b.Property<int>("enrollDetialsID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("enrollDetialsID"));
+
+                    b.Property<int>("TeacherCourseID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("enrollID")
+                        .HasColumnType("int");
+
+                    b.HasKey("enrollDetialsID");
+
+                    b.HasIndex("TeacherCourseID");
+
+                    b.HasIndex("enrollID");
+
+                    b.ToTable("enrollmentDetials");
+                });
+
+            modelBuilder.Entity("DTLayer.Entities.Enrollments", b =>
+                {
+                    b.Property<int>("enrollID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("enrollID"));
+
+                    b.Property<int>("StudnetID")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("enrollDate")
+                        .HasColumnType("date");
+
+                    b.Property<byte>("enrollStatus")
+                        .HasColumnType("TINYINT");
+
+                    b.HasKey("enrollID");
+
+                    b.HasIndex("StudnetID");
+
+                    b.ToTable("enrollments");
                 });
 
             modelBuilder.Entity("DTLayer.Entities.Items", b =>
@@ -145,6 +192,25 @@ namespace DTLayer.Migrations
                     b.ToTable("specilzeations");
                 });
 
+            modelBuilder.Entity("DTLayer.Entities.Students", b =>
+                {
+                    b.Property<int>("StudnetID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudnetID"));
+
+                    b.Property<int>("PersonID")
+                        .HasColumnType("int");
+
+                    b.HasKey("StudnetID");
+
+                    b.HasIndex("PersonID")
+                        .IsUnique();
+
+                    b.ToTable("students");
+                });
+
             modelBuilder.Entity("DTLayer.Entities.TeacherCourses", b =>
                 {
                     b.Property<int>("TeacherCourseID")
@@ -172,7 +238,8 @@ namespace DTLayer.Migrations
 
                     b.HasIndex("courseID");
 
-                    b.HasIndex("teacherID");
+                    b.HasIndex("teacherID", "courseID")
+                        .IsUnique();
 
                     b.ToTable("TeacherCourses");
                 });
@@ -215,6 +282,36 @@ namespace DTLayer.Migrations
                     b.Navigation("Items");
                 });
 
+            modelBuilder.Entity("DTLayer.Entities.EnrollmentDetials", b =>
+                {
+                    b.HasOne("DTLayer.Entities.TeacherCourses", "TeacherCourse")
+                        .WithMany("enrollmentDetials")
+                        .HasForeignKey("TeacherCourseID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("DTLayer.Entities.Enrollments", "enrollment")
+                        .WithMany("enrollmentDetials")
+                        .HasForeignKey("enrollID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TeacherCourse");
+
+                    b.Navigation("enrollment");
+                });
+
+            modelBuilder.Entity("DTLayer.Entities.Enrollments", b =>
+                {
+                    b.HasOne("DTLayer.Entities.Students", "student")
+                        .WithMany("enrollment")
+                        .HasForeignKey("StudnetID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("student");
+                });
+
             modelBuilder.Entity("DTLayer.Entities.Items", b =>
                 {
                     b.HasOne("DTLayer.Entities.Specilzeations", "specilize")
@@ -224,6 +321,17 @@ namespace DTLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("specilize");
+                });
+
+            modelBuilder.Entity("DTLayer.Entities.Students", b =>
+                {
+                    b.HasOne("DTLayer.Entities.People", "person")
+                        .WithOne("students")
+                        .HasForeignKey("DTLayer.Entities.Students", "PersonID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("person");
                 });
 
             modelBuilder.Entity("DTLayer.Entities.TeacherCourses", b =>
@@ -269,6 +377,11 @@ namespace DTLayer.Migrations
                     b.Navigation("teacherCourses");
                 });
 
+            modelBuilder.Entity("DTLayer.Entities.Enrollments", b =>
+                {
+                    b.Navigation("enrollmentDetials");
+                });
+
             modelBuilder.Entity("DTLayer.Entities.Items", b =>
                 {
                     b.Navigation("course");
@@ -276,6 +389,8 @@ namespace DTLayer.Migrations
 
             modelBuilder.Entity("DTLayer.Entities.People", b =>
                 {
+                    b.Navigation("students");
+
                     b.Navigation("teacher");
                 });
 
@@ -284,6 +399,16 @@ namespace DTLayer.Migrations
                     b.Navigation("Items");
 
                     b.Navigation("Teachers");
+                });
+
+            modelBuilder.Entity("DTLayer.Entities.Students", b =>
+                {
+                    b.Navigation("enrollment");
+                });
+
+            modelBuilder.Entity("DTLayer.Entities.TeacherCourses", b =>
+                {
+                    b.Navigation("enrollmentDetials");
                 });
 
             modelBuilder.Entity("DTLayer.Entities.Teachers", b =>
