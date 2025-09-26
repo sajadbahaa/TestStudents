@@ -16,7 +16,7 @@ namespace VaildationLayer.ItemsValidation
                 (x => x.RuleFor(y=>y.itemName).NotEmpty()
                          .WithMessage("لا يمكن ان يكون فارغ")
             );
-            RuleFor(x => x.specilizeId).LessThanOrEqualTo((short)0)
+            RuleFor(x => x.specilizeId).GreaterThan((short)0)
                 .WithMessage(" لا يجب ان يكون فارغ ");
         }
     }
