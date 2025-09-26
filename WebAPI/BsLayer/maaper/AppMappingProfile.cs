@@ -2,16 +2,13 @@
 using DTLayer.Entities;
 using DTLayer.Entities.EntityEnums;
 using Dtos.CoursesDtos;
+using Dtos.EnrollStudentsDtos.Enrollment;
+using Dtos.EnrollStudentsDtos.EnrollmentDetials;
+using Dtos.EnrollStudentsDtos.StudentsDtos;
 using Dtos.ItemWithSpeclizeDtos;
 using Dtos.PeopleDtos;
 using Dtos.TeacherCoursesDtos;
 using Dtos.TeacherDtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BsLayer.maaper
 {
@@ -152,13 +149,6 @@ namespace BsLayer.maaper
                     .ForMember(x => x.specilzeName, opt => opt.MapFrom(x => x.specilze.specilizeName))
                     .ForMember(x => x.person, opt => opt.MapFrom(x => x.person));
 
-            // repeate. CreateMap<addTeacherDtos,Teachers>()
-            //        .ForMember(x => x.hireDate, opt => opt.MapFrom(x => x.hireDate))
-            //        .ForMember(x => x.person, opt => opt.MapFrom(x => x.person))
-            //        .ForMember(x => x.specilizeId, opt => opt.MapFrom(x => x.specilizeId))
-            //        .ForMember(x => x.specilze, opt => opt.Ignore());
-
-
 
             CreateMap<addTeacherDtos, Teachers>()
                  .ForMember(x => x.specilze, opt => opt.Ignore());
@@ -174,7 +164,7 @@ namespace BsLayer.maaper
                 .ForMember(x => x.specilze, opt => opt.Ignore())
                  .ForMember(x => x.person, opt => opt.MapFrom(x=>x.person));
 
-
+// Teacher Courses
             CreateMap<TeacherCourses, findTeacherCourseDtos>()
                 .ForMember(x => x.TeacherCourseID, opt => opt.MapFrom(x => x.TeacherCourseID))
 
@@ -182,20 +172,63 @@ namespace BsLayer.maaper
                     .ForMember(x => x.teacherName, opt => opt.MapFrom(x => x.teacher.person.firstName+' '+ x.teacher.person.lastName))
                     .ForMember(x => x.startDate, opt => opt.MapFrom(x => x.startDate))
                     .ForMember(x => x.endDate, opt => opt.MapFrom(x => x.endDate))
-                    .ForMember(x => x.note, opt => opt.MapFrom(x => x.note))
-
-
-                    ;
+                    .ForMember(x => x.note, opt => opt.MapFrom(x => x.note));
 
             CreateMap<updateTeacherCoursrDtos,TeacherCourses>()
                 .ForMember(x => x.TeacherCourseID, opt => opt.MapFrom(x => x.TeacherCourseID))
 
                     .ForMember(x => x.courseID, opt => opt.MapFrom(x => x.courseID))
                     .ForMember(x => x.course, opt => opt.Ignore())
-                    .ForMember(x => x.teacher, opt => opt.Ignore());
+                    .ForMember(x => x.teacher, opt => opt.Ignore());;
+
+            // Create Mapper Students 
+            /// find students
+            CreateMap<Students, findStudentsDtos>()
+        .ForMember(x => x.StudentID, opt => opt.MapFrom(f => f.StudnetID))
+        .ForMember(x=>x.findPeople,opt=>opt.MapFrom(x=>x.person));
+            /// update students
+            CreateMap<updateStudentsPersonDtos,Students>();
+
+            /// add Students
+            CreateMap<addStudentDtos, Students>()
+                .ForMember(x => x.StudnetID, opt => opt.Ignore())
+                .ForMember(x => x.PersonID, opt => opt.MapFrom(x=>x.addPeopleDtos.PersonID))
+                .ForMember(x => x.person, opt => opt.Ignore())
+                .ForMember(x => x.enrollment, opt => opt.Ignore())
+                ;
+
+            /// Enrollments            
+            CreateMap<EnrollDtos, Enrollments>()
+                .ForMember(x => x.StudnetID, opt => opt.MapFrom(x=>x.StudnetID))
+                .ForMember(x => x.enrollStatus, opt => opt.MapFrom(x =>(EnrollmentEnums)x.enrollStatus))
+                ;
+                ;
+
+            /// find Enrollments
+            CreateMap<Enrollments, findEnrollmentDtos>()
+                .ForMember(x => x.enrollDate, opt => opt.MapFrom(x => x.enrollDate))
+                .ForMember(x => x.enrollStatus, opt => opt.MapFrom(x => x.enrollStatus.ToString()))
+.ForMember(x => x.StudnetID, opt => opt.MapFrom(x => x.StudnetID))
+.ForMember(x => x.enrollID, opt => opt.MapFrom(x => x.enrollID));
 
 
-            ;
+
+            /// add enroll studnet enroll detilas.
+            CreateMap<addStudentsEnrollmentDetialsFTDtos, Students>();
+
+            CreateMap<addStudentsEnrollmentDetialsDtos, EnrollmentDetials>()
+                .ForMember(x => x.enrollment, opt => opt.Ignore())
+                .ForMember(x => x.TeacherCourse, opt => opt.Ignore())
+                .ForMember(x => x.enrollID, opt => opt.MapFrom(x=>x.enrollID))
+                .ForMember(x => x.TeacherCourseID,opt=>opt.Ignore())
+                .ForMember(x => x.enrollDetialsID, opt => opt.Ignore())
+                ;
+
+            /// find enroll detilas 
+            CreateMap<EnrollmentDetials, findEnrollmentDetialsDtos>()
+                .ForMember(x => x.enrollDetialsID, opt => opt.MapFrom(x => x.enrollDetialsID))
+                .ForMember(x => x.TeacherCourseID, opt => opt.MapFrom(x => x.TeacherCourseID))
+.ForMember(x => x.enrollID, opt => opt.MapFrom(x => x.enrollID));
 
         }
 

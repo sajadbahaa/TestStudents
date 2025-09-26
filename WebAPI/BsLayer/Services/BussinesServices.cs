@@ -22,7 +22,9 @@ namespace BsLayer.Services
             services.AddScoped<PeopleService>();
             services.AddScoped<TeacherService>();
             services.AddScoped<TeacherCoursesService>();
-
+            services.AddScoped<StudentsService>();
+            services.AddScoped<EnrollmentsService>();
+            services.AddScoped<EnrollmentsDetilasService>();
             return services;
         }
     }
