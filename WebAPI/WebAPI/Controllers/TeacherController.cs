@@ -17,7 +17,7 @@ namespace WebAPI.Controllers
         }
 
         // 1. Get All Teachers
-        [HttpGet(Name = "GetAllTeachersAsync")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> GetAllTeachersAsync()
         {
             var teachers = await _teacherService.GetAllTeachersAsync();
@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
         }
 
         // 2. Get Teacher By ID
-        [HttpGet("{id}", Name = "GetTeacherByIdAsync")]
+        [HttpGet("[action]/{id:int}")]
         public async Task<IActionResult> GetTeacherByIdAsync(short id)
         {
             var teacher = await _teacherService.GetTeacherByIDAsync(id);
@@ -34,7 +34,7 @@ namespace WebAPI.Controllers
         }
 
         // 3. Add New Teacher
-        [HttpPost(Name = "AddNewTeacherAsync")]
+        [HttpPost("[action]")]
         public async Task<IActionResult> AddNewTeacherAsync([FromBody] addTeacherDtos dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -44,7 +44,7 @@ namespace WebAPI.Controllers
         }
 
         // 4. Update Teacher
-        [HttpPut(Name = "UpdateTeacherAsync")]
+        [HttpPut("[action]")]
         public async Task<IActionResult> UpdateTeacherAsync([FromBody] updateTeacherDtos dto)
         {
            
@@ -54,7 +54,7 @@ namespace WebAPI.Controllers
         }
 
         // 5. Delete Teacher
-        [HttpDelete("{id}", Name = "DeleteTeacherAsync")]
+        [HttpDelete("[action]")]
         public async Task<IActionResult> DeleteTeacherAsync(short id)
         {
             var result = await _teacherService.DeleteAsync(id);
@@ -63,7 +63,7 @@ namespace WebAPI.Controllers
         }
 
         // 6. Update Teacher + Person
-        [HttpPut("with-person", Name = "UpdateTeacherWithPersonAsync")]
+        [HttpPut("[action]")]
         public async Task<IActionResult> UpdateTeacherWithPersonAsync([FromBody] updateTeachrerPersonDtos dto)
         {
             

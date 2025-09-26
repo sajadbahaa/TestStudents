@@ -16,7 +16,7 @@ namespace WebAPI.Controllers
         }
 
         // POST: api/TeacherCourses
-        [HttpPost("GetAllTeachersCoursesAsync")]
+        [HttpPost("[action]")]
         public async Task<IActionResult> AddTeacherCoursesAsync([FromBody] addTeacherCourseDtos dto)
         {
             var result = await _teacherCoursesService.AddSingleTeacherWithCoursesAsync(dto);
@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
         }
 
         // PUT: api/TeacherCourses/{id}
-        [HttpPut("UpdateTeacherCourseAsyncBy")]
+        [HttpPut("[action]")]
         public async Task<IActionResult> UpdateTeacherCourseAsync([FromBody] updateTeacherCoursrDtos dto)
         {
 
@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
         }
 
         // DELETE: api/TeacherCourses/{id}
-        [HttpDelete("DeleteAsync/{id}")]
+        [HttpDelete("[action]")]
         public async Task<IActionResult> DeleteTeacherCourseAsync(int id)
         {
             var result = await _teacherCoursesService.DeleteAsync(id);
@@ -50,7 +50,7 @@ namespace WebAPI.Controllers
         }
 
         // GET: api/TeacherCourses/{id}
-        [HttpGet("GetTeacherCourseAsyncBy/{id}")]
+        [HttpGet("[action]/{id:int}")]
         public async Task<ActionResult<findTeacherCourseDtos>> GetTeacherCourseByIdAsync(int id)
         {
             var result = await _teacherCoursesService.GetTeacherCoursByIDAsync(id);
@@ -62,7 +62,7 @@ namespace WebAPI.Controllers
         }
 
         // GET: api/TeacherCourses
-        [HttpGet("GetAllTeacherCoursesAsync")]
+        [HttpGet("[action]")]
         public async Task<ActionResult<List<findTeacherCourseDtos>>> GetAllTeacherCoursesAsync()
         {
             var result = await _teacherCoursesService.GetTeacherCoursByIDAsync();
